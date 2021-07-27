@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk , messagebox
 from tkinter import font
 from tkinter.font import BOLD, Font
 
@@ -48,7 +48,6 @@ class Demo0(Tk):
         self.filewin.geometry("500x500")
         self.button = Button(self.filewin, text="Do nothing button")
         self.button.pack()
-  
 
 class Demo2(Frame):
     def __init__(self,master):
@@ -94,17 +93,54 @@ class Demo2(Frame):
         self.btn1 = Button(self.Student_search_frame, text ='Search',font=("Elephant",15,"bold"),borderwidth=3,highlightbackground="black",bg="grey",cursor="pencil",command=lambda: self.switch_mini_frame(Demo2.all_non_fee_paid(self)))
         self.btn1.place(x="760px",y="50px")
 
-
         self.seperating_line = Label(self.Student_search_frame,text="_____________________________________________________________________________________________________",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="0px",y="90px")
-        self._miniframe = None
         self.switch_mini_frame(Demo2.Single_student_search(self))
-
     def switch_mini_frame(self,frame_class):
-        new_frame = frame_class
-        if self._miniframe is not None:
-            self.Student_search_frame.destroy()
-        self._miniframe = new_frame
-        self._miniframe
+        self.new_frame = frame_class
+        self.single_student_value = 0
+        self.class_search_value = 0
+        self.all_non_fee_value = 0
+        value = self.new_frame
+
+        if value == 0 and self.single_student_value == 0:
+            try:
+                if self.whole_class_top_level_window.winfo_exists():
+                    self.whole_class_top_level_window.destroy()
+                    self.class_search_value = 0    
+                if self.all_non_fee_paid_toplevel.winfo_exists():
+                    self.all_non_fee_paid_toplevel.destroy()
+                    self.all_non_fee_value = 0
+            except:
+                pass
+            self.new_frame
+            self.single_student_value = 1
+        elif value == 1 and self.class_search_value == 0:
+            try:
+                if self.Single_student_top_level_window.winfo_exists():
+                    self.Single_student_top_level_window.destroy()    
+                    self.single_student_value = 0
+                elif self.all_non_fee_paid_toplevel.winfo_exists():
+                    self.all_non_fee_paid_toplevel.destroy()
+                    self.all_non_fee_value = 0
+            except:
+                pass
+            self.new_frame
+            self.class_search_value = 1
+        elif value == 2 and self.all_non_fee_value == 0:
+            try:
+                if self.Single_student_top_level_window.winfo_exists():
+                    self.Single_student_top_level_window.destroy()
+                    self.single_student_value = 0 
+                elif self.whole_class_top_level_window.winfo_exists():
+                    self.whole_class_top_level_window.destroy()
+                    self.class_search_value = 0
+            except:
+                pass
+            self.new_frame
+            self.all_non_fee_value = 1
+    
+    def onclosing(self):
+        pass
 
 
     def Single_student_search(self):
@@ -142,6 +178,9 @@ class Demo2(Frame):
  
         self.btn1 = ttk.Button(self.Single_student_top_level_window, text = 'Search',style = 'W.TButton',cursor="pencil")
         self.btn1.place(x="350px",y="260px")
+
+        # self.Single_student_top_level_window.bind("<Map>",Demo2.on_closing)
+        return 0
  
     def search_whole_class(self):
        self.whole_class_top_level_window = Toplevel(self)
@@ -184,6 +223,7 @@ class Demo2(Frame):
        self.Student_limit_rollNo_upper_input.current()
        self.btn1 = ttk.Button(self.whole_class_top_level_window, text = 'Search',style = 'W.TButton',cursor="pencil")
        self.btn1.place(x="340px",y="250px")
+       return 1
 
     def all_non_fee_paid(self):
        self.all_non_fee_paid_toplevel = Toplevel(self)
@@ -194,6 +234,7 @@ class Demo2(Frame):
        self.button_alphabetically.place(x="30px",y="200px")
        self.button_class_wise = Button(self.all_non_fee_paid_toplevel, text = '2. Class Wise',highlightbackground="black",borderwidth="2px",font=("Elephant",20,"bold","underline"),relief="raised",cursor="pencil")
        self.button_class_wise.place(x="350px",y="200px")
+       return 2
 
 class Demo3(Frame):
     def __init__(self,master):
