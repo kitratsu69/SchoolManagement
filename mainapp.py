@@ -1,5 +1,9 @@
 from tkinter import *
+<<<<<<< HEAD
 from tkinter import ttk , messagebox
+=======
+from tkinter import ttk
+>>>>>>> c942a3b98851ef7bad4cab5093a3e26f92134f72
 from tkinter import font
 from tkinter.font import BOLD, Font
 
@@ -48,6 +52,10 @@ class Demo0(Tk):
         self.filewin.geometry("500x500")
         self.button = Button(self.filewin, text="Do nothing button")
         self.button.pack()
+<<<<<<< HEAD
+=======
+  
+>>>>>>> c942a3b98851ef7bad4cab5093a3e26f92134f72
 
 class Demo2(Frame):
     def __init__(self,master):
@@ -93,6 +101,7 @@ class Demo2(Frame):
         self.btn1 = Button(self.Student_search_frame, text ='Search',font=("Elephant",15,"bold"),borderwidth=3,highlightbackground="black",bg="grey",cursor="pencil",command=lambda: self.switch_mini_frame(Demo2.all_non_fee_paid(self)))
         self.btn1.place(x="760px",y="50px")
 
+<<<<<<< HEAD
         self.seperating_line = Label(self.Student_search_frame,text="_____________________________________________________________________________________________________",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="0px",y="90px")
         self.switch_mini_frame(Demo2.Single_student_search(self))
     def switch_mini_frame(self,frame_class):
@@ -141,6 +150,19 @@ class Demo2(Frame):
     
     def onclosing(self):
         pass
+=======
+
+        self.seperating_line = Label(self.Student_search_frame,text="_____________________________________________________________________________________________________",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="0px",y="90px")
+        self._miniframe = None
+        self.switch_mini_frame(Demo2.Single_student_search(self))
+
+    def switch_mini_frame(self,frame_class):
+        new_frame = frame_class
+        if self._miniframe is not None:
+            self.Student_search_frame.destroy()
+        self._miniframe = new_frame
+        self._miniframe
+>>>>>>> c942a3b98851ef7bad4cab5093a3e26f92134f72
 
 
     def Single_student_search(self):
@@ -178,9 +200,12 @@ class Demo2(Frame):
  
         self.btn1 = ttk.Button(self.Single_student_top_level_window, text = 'Search',style = 'W.TButton',cursor="pencil")
         self.btn1.place(x="350px",y="260px")
+<<<<<<< HEAD
 
         # self.Single_student_top_level_window.bind("<Map>",Demo2.on_closing)
         return 0
+=======
+>>>>>>> c942a3b98851ef7bad4cab5093a3e26f92134f72
  
     def search_whole_class(self):
        self.whole_class_top_level_window = Toplevel(self)
@@ -223,7 +248,10 @@ class Demo2(Frame):
        self.Student_limit_rollNo_upper_input.current()
        self.btn1 = ttk.Button(self.whole_class_top_level_window, text = 'Search',style = 'W.TButton',cursor="pencil")
        self.btn1.place(x="340px",y="250px")
+<<<<<<< HEAD
        return 1
+=======
+>>>>>>> c942a3b98851ef7bad4cab5093a3e26f92134f72
 
     def all_non_fee_paid(self):
        self.all_non_fee_paid_toplevel = Toplevel(self)
@@ -234,7 +262,10 @@ class Demo2(Frame):
        self.button_alphabetically.place(x="30px",y="200px")
        self.button_class_wise = Button(self.all_non_fee_paid_toplevel, text = '2. Class Wise',highlightbackground="black",borderwidth="2px",font=("Elephant",20,"bold","underline"),relief="raised",cursor="pencil")
        self.button_class_wise.place(x="350px",y="200px")
+<<<<<<< HEAD
        return 2
+=======
+>>>>>>> c942a3b98851ef7bad4cab5093a3e26f92134f72
 
 class Demo3(Frame):
     def __init__(self,master):
