@@ -10,8 +10,7 @@ def main():
     app = Demo0() 
     app.geometry("1360x700")
     app.title("Fee Collection")
-    app.config(background="Black")
-    # Demo3(root)    
+    app.config(background="Black") 
     app.mainloop()
 
 
