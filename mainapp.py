@@ -7,7 +7,6 @@ from student_fee import *
 from admission import *
 
 def main():
-    listis = []
     app = Demo0() 
     app.geometry("1360x700")
     app.title("Fee Collection")
