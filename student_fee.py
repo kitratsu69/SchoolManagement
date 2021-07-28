@@ -60,6 +60,9 @@ class Demo2(Frame):
     def switch_mini_frame(self,frame_class):
         self.new_frame = frame_class
         value = self.new_frame
+        self.single_student_value = 0
+        self.all_non_fee_value = 0
+        self.class_search_value = 0
 
         if value == 0 and self.single_student_value == 0:
             try:
