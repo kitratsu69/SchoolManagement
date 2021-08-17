@@ -1,2 +1,2 @@
-Hello this is a school Managenet project
+School Managenet project
 # SchoolManagement
