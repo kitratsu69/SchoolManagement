@@ -27,11 +27,12 @@ class Demo3(Frame):
 
         self.Student_admission_frame = Frame(self,borderwidth=2,highlightbackground="Black",relief="sunken")
         self.first_row_text = "10px"
-        self.first_row_entry = "100px"
-        self.second_row_text = "270px"
-        self.second_row_entry = "360px"
-        self.third_row_text = "530px"
-        self.third_row_entry = "630px"
+        self.first_row_entry = "120px"
+        self.second_row_text = "290px"
+        self.second_row_entry = "380px"
+        self.third_row_text = "550px"
+        self.third_row_entry = "650px"
+        self.address_text_pixels = 70
 
         style = ttk.Style()
         self.student_admission_frame_text_size = 12
@@ -52,20 +53,20 @@ class Demo3(Frame):
 
         self.Student_search_class_var_type = IntVar()
         self.Student_admission_class = Label(self.Student_admission_frame,text="Class : ",font=("Elephant",self.student_admission_frame_text_size,"bold")).place(x=self.first_row_text,y="95px")
-        self.Student_admission_class_input = ttk.Combobox(self.Student_admission_frame, width = 23, textvariable = self.Student_search_class_var_type,font=("Elephant",12,"bold"),foreground="Blue")
+        self.Student_admission_class_input = ttk.Combobox(self.Student_admission_frame, width = 14, textvariable = self.Student_search_class_var_type,font=("Elephant",12,"bold"),foreground="Blue")
         self.Student_admission_class_input['values'] = (1,2,3,4,5,6,7,8,9,10,11,12)
         self.Student_admission_class_input.place(x=self.first_row_entry,y="95px")
         self.Student_admission_class_input.current()
 
         self.Student_search_section_var_type = StringVar()
         self.Student_admission_section = Label(self.Student_admission_frame,text="Section : ",font=("Elephant",self.student_admission_frame_text_size,"bold")).place(x=self.second_row_text,y="95px")
-        self.Student_admission_section_input = ttk.Combobox(self.Student_admission_frame, width = 23, textvariable = self.Student_search_section_var_type,font=("Elephant",12,"bold"),foreground="Blue")
+        self.Student_admission_section_input = ttk.Combobox(self.Student_admission_frame, width = 14, textvariable = self.Student_search_section_var_type,font=("Elephant",12,"bold"),foreground="Blue")
         self.Student_admission_section_input['values'] = (list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
         self.Student_admission_section_input.place(x=self.second_row_entry,y="95px")
         self.Student_admission_section_input.current()
 
         self.Student_admission_address_student = Label(self.Student_admission_frame,text="Home Address : ",font=("Elephant",self.student_admission_frame_text_size,"bold")).place(x=self.first_row_text,y="120px")
-        self.Student_admission_address_student_input = Text(self.Student_admission_frame,height=1,background="white",font=('Elephant',self.student_admission_frame_entry_size,),foreground="Blue").place(x=self.first_row_entry,y="120px")
+        self.Student_admission_address_student_input = Text(self.Student_admission_frame,height=1,background="white",width= self.address_text_pixels,font=('Elephant',self.student_admission_frame_entry_size,),foreground="Blue").place(x=self.first_row_entry,y="120px")
 
 
         self.Student_admission_father_name = Label(self.Student_admission_frame,text="Father",font=("Elephant",15,"bold","underline"),foreground="Blue").place(x=self.first_row_text,y="150px")
@@ -83,7 +84,7 @@ class Demo3(Frame):
         self.Student_admission_Occupation_father_input = ttk.Entry(self.Student_admission_frame,justify=LEFT,font=('courier',self.student_admission_frame_entry_size,"bold"),foreground="Blue").place(x=self.first_row_entry,y="210px")
 
         self.Student_admission_address_student = Label(self.Student_admission_frame,text="Office Address:",font=("Elephant",self.student_admission_frame_text_size,"bold")).place(x=self.first_row_text,y="235px")
-        self.Student_admission_address_student_input = Text(self.Student_admission_frame,height=1,background="white",font=('Elephant',self.student_admission_frame_entry_size,),foreground="Blue").place(x=self.first_row_entry,y="235px")
+        self.Student_admission_address_student_input = Text(self.Student_admission_frame,height=1,width= self.address_text_pixels,background="white",font=('Elephant',self.student_admission_frame_entry_size,),foreground="Blue").place(x=self.first_row_entry,y="235px")
 
 
         self.Student_admission_Mother_name = Label(self.Student_admission_frame,text="Mother",font=("Elephant",15,"bold","underline"),foreground="Blue").place(x=self.first_row_text,y="265px")
@@ -102,7 +103,7 @@ class Demo3(Frame):
         self.Student_admission_Occupation_mother_input = ttk.Entry(self.Student_admission_frame,justify=LEFT,font=('courier',self.student_admission_frame_entry_size,"bold"),foreground="Blue").place(x=self.first_row_entry,y="320px")
 
         self.Student_admission_address_student = Label(self.Student_admission_frame,text="Office Address:",font=("Elephant",self.student_admission_frame_text_size,"bold")).place(x=self.first_row_text,y="345px")
-        self.Student_admission_address_student_input = Text(self.Student_admission_frame,height=1,background="white",font=('Elephant',self.student_admission_frame_entry_size,),foreground="Blue").place(x=self.first_row_entry,y="345px")
+        self.Student_admission_address_student_input = Text(self.Student_admission_frame,height=1,width= self.address_text_pixels,background="white",font=('Elephant',self.student_admission_frame_entry_size,),foreground="Blue").place(x=self.first_row_entry,y="345px")
 
 
 
