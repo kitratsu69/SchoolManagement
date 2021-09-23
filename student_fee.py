@@ -30,28 +30,28 @@ class Demo2(Frame):
         # self.master = master
         self.Student_search_frame = Frame(self,borderwidth=2,highlightbackground="Black",relief="sunken")
         self.style = ttk.Style()
-        self.student_search_frame_text_size = 16
-        self.student_search_frame_entry_size = 17
+        self.student_search_frame_text_size = 14
+        self.student_search_frame_entry_size = 10
         self.Student_search_frame.pack(side = RIGHT,fill=BOTH,expand=TRUE,padx="1.5px",pady="1px")
         self.Student_search_title = Label(self.Student_search_frame,text="Student details & Fees",font=("Elephant",23,"bold","italic")).pack(side=TOP,fill=X)
 
 
-        self.Student_search_button = Label(self.Student_search_frame,text="Student Search: ",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="30px",y="50px")
+        # self.Student_search_button = Label(self.Student_search_frame,text="Student Search: ",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="30px",y="50px")
 
-        self.btn1 = Button(self.Student_search_frame, text ='Search',font=("Elephant",15,"bold"),borderwidth=3,highlightbackground="black",bg="grey",cursor="pencil",command=lambda: self.switch_mini_frame(Demo2.Single_student_search(self)))
-        self.btn1.place(x="150px",y="50px")
-
-
-        self.class_search_button = Label(self.Student_search_frame,text="Class Search: ",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="350px",y="50px")
-
-        self.btn1 = Button(self.Student_search_frame, text ='Search',font=("Elephant",15,"bold"),borderwidth=3,bg="grey",cursor="pencil",command=lambda: self.switch_mini_frame(Demo2.search_whole_class(self)))
-        self.btn1.place(x="450px",y="50px")
+        self.btn1 = Button(self.Student_search_frame, text ='Student Search :',font=("Elephant",15,"bold"),borderwidth=3,highlightbackground="black",bg="grey",cursor="pencil",command=lambda: self.switch_mini_frame(Demo2.Single_student_search(self)))
+        self.btn1.place(x="40px",y="50px")
 
 
-        self.fee_pending_search_button = Label(self.Student_search_frame,text="All fee pending students:",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="580px",y="50px")
+        # self.class_search_button = Label(self.Student_search_frame,text="Class Search: ",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="350px",y="50px")
 
-        self.btn1 = Button(self.Student_search_frame, text ='Search',font=("Elephant",15,"bold"),borderwidth=3,highlightbackground="black",bg="grey",cursor="pencil",command=lambda: self.switch_mini_frame(Demo2.all_non_fee_paid(self)))
-        self.btn1.place(x="760px",y="50px")
+        self.btn1 = Button(self.Student_search_frame, text ='Class Search :',font=("Elephant",15,"bold"),borderwidth=3,bg="grey",cursor="pencil",command=lambda: self.switch_mini_frame(Demo2.search_whole_class(self)))
+        self.btn1.place(x="330px",y="50px")
+
+
+        # self.fee_pending_search_button = Label(self.Student_search_frame,text="All fee pending students:",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="580px",y="50px")
+
+        self.btn1 = Button(self.Student_search_frame, text ='All fee pending students :',font=("Elephant",15,"bold"),borderwidth=3,highlightbackground="black",bg="grey",cursor="pencil",command=lambda: self.switch_mini_frame(Demo2.all_non_fee_paid(self)))
+        self.btn1.place(x="640px",y="50px")
 
         self.seperating_line = Label(self.Student_search_frame,text="_____________________________________________________________________________________________________",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="0px",y="90px")
         self.switch_mini_frame(Demo2.Single_student_search(self))
@@ -107,13 +107,13 @@ class Demo2(Frame):
 
     def Single_student_search(self):
         self.Single_student_top_level_window = Toplevel(self)
-        self.Single_student_top_level_window.geometry("1130x427+226+261")
-        self.student_search_title = Label(self.Single_student_top_level_window,text="Student Details",font=("Elephant",23,"bold","underline")).place(x="30px",y="10px")
-        self.Student_search_admission_No = Label(self.Single_student_top_level_window,text="Search by admission No:",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="30px",y="60px")
-        self.Student_search_admission_no_input = ttk.Entry(self.Single_student_top_level_window,justify=LEFT,font=('Elephant',self.student_search_frame_entry_size,"bold"),foreground="Blue",background="green").place(x="220px",y="60px")
-        self.btn1 = Button(self.Single_student_top_level_window, text ='Search',font=("Elephant",15,"bold"),bg="grey",cursor="pencil")
-        self.btn1.place(x="410px",y="55px")
-        self.Student_search_alternative = Label(self.Single_student_top_level_window,text="OR",font=("Elephant",22,"bold","underline")).place(x="30px",y="100px")
+        self.Single_student_top_level_window.geometry("1160x427+180+261")
+        self.student_search_title = Label(self.Single_student_top_level_window,text="Student Details",font=("Elephant",23,"bold","underline")).pack()
+        self.Student_search_admission_No = Label(self.Single_student_top_level_window,text="Search by admission No:",font=("Elephant",self.student_search_frame_text_size,"italic")).pack()
+        self.Student_search_admission_no_input = ttk.Entry(self.Single_student_top_level_window,justify=LEFT,foreground="Blue",background="green").pack()
+        self.btn1 = Button(self.Single_student_top_level_window, text ='Search',font=("Elephant",10,"bold"),bg="grey",cursor="pencil")
+        self.btn1.pack()
+        self.Student_search_alternative = Label(self.Single_student_top_level_window,text="OR",font=("Elephant",22,"bold","underline")).pack()
         self.Student_search_first_name = Label(self.Single_student_top_level_window,text="First Name : ",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="30px",y="140px")
         self.Student_search_first_name_input = ttk.Entry(self.Single_student_top_level_window,justify=LEFT,font=('courier',self.student_search_frame_entry_size,"bold"),foreground="Blue").place(x="190px",y="140px")
         self.Student_search_last_name = Label(self.Single_student_top_level_window,text="Last Name : ",font=("Elephant",self.student_search_frame_text_size,"bold")).place(x="440px",y="140px")
